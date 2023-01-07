@@ -6,11 +6,11 @@ import Basket from "./pages/Basket"
 
 function App() {
   return (
-    <BrowserRouter basename="comento-shop">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
-        <Route path="/basket" element={<Basket />} />
+        <Route path="/Basket" element={<Basket />} />
       </Routes>
     </BrowserRouter>
   );
