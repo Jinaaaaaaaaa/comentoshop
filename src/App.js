@@ -6,7 +6,7 @@ import Basket from "./pages/Basket"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='comentoshop'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
@@ -15,9 +15,5 @@ function App() {
     </BrowserRouter>
   );
 }
-// function App() {
-//   return (
-//     <Home />
-//   )
-// }
+
 export default App;

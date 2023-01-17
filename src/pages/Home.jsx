@@ -49,7 +49,7 @@ border-bottom:10px solid #ddd
 `
 
 const CategoryButton=styled.button`
-margin:4px;
+margin:2px;
 font-size:18px;
 padding :13px; 
 background-color:#777;
