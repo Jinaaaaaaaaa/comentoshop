@@ -28,18 +28,13 @@ const ProductDetail = () => {
             <Cost> {product.price}원 </Cost>
       </Layout>
       <MenuTab> 
-            <onClickButton onClick={() => {
-                
-            }}> 상품설명 </onClickButton>
-            <onClickButton onClick={() => { 
-              
-            }}> 상품 후기 </onClickButton>   
+            <MenuTab>상품 설명</MenuTab>  <MenuTab>상품 후기</MenuTab>   
        </MenuTab>
-       {activeMenuTab === "description" && (
-            <ProductDetailImage src={product.mainImage} alt="사진 설명" />
-          )}
+       
+       <ProductDetailImage src={product.mainImage} alt="사진 설명" />
+          
 
-          {activeMenuTab === "review" && (
+       {activeMenuTab === "review" && (
             <div>
               {mockReviews.map((review) => (
                 <Review
@@ -51,15 +46,13 @@ const ProductDetail = () => {
                   reviewText={review.reviewText}
                   />
                   ))}
-                </div>
-              )}
+             </div>
+        )}
+        <AddBasketButton onClick={() =>AddBasketButton(product)}>
+        장바구니 담기
+       </AddBasketButton>  
        <div active={activeMenuTab === "description" && ( <ProductDetailImage src={product.mainImage} alt="사진 설명" />)}>
       </div>
-      
-      
-
-
-
       </div>
 
     
@@ -87,10 +80,9 @@ const MainImage = styled.div`
 
 const MenuTab = styled.div`
   flex: 1;
-  padding: 14px;
-  border: solid 1px #eeeeee;
+  border: solid 1px #eaf2cd;
   text-align: center;
-  background-color: ${(props) => props.active && "#eeeeee"};
+  background-color:#eaf2cc;
 `;
 
 const onClickButton=styled.button`
@@ -107,4 +99,22 @@ padding: 8px 0;
 `
 const ProductDetailImage = styled.img`
   width: 100%;
+`;
+
+const AddBasketButton = styled.div`
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-width: 460px;
+  height: 65px;
+  background: #eaf2cc;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
 `;
